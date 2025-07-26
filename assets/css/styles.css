@@ -1,0 +1,61 @@
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about-text {
+    line-height: 1.6;
+}
+
+.intro {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+.about-subsection {
+    margin-bottom: 2rem;
+}
+
+.about-subsection h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.about-subsection ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-subsection ul li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.about-subsection ul li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #0066cc;
+}
+
+.github-profile-card {
+    background: linear-gradient(145deg, #24292e, #1a1d20);
+    color: white;
+}
+
+.github-profile-card h3,
+.github-profile-card p {
+    color: white;
+}
+
+.github-link {
+    background: #2ea44f !important;
+}
+
+.github-link:hover {
+    background: #2c974b !important;
+}

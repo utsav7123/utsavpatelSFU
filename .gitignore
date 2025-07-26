@@ -1,0 +1,23 @@
+.DS_Store
+node_modules/
+.vscode/
+*.log
+
+3. **Prepare for deployment**
+- Move all files from `src/` to root directory
+```bash
+# In your project folder
+move src\* .
+rmdir src
+```
+
+4. **Update file paths in index.html**
+```html
+// filepath: c:\Users\utsav\OneDrive\Desktop\CMPT\MyProfile\portfolio-website\index.html
+<head>
+    // ...existing code...
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles.css">
+    // ...existing code...
+</head>
+```
