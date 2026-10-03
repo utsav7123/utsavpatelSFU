@@ -320,7 +320,7 @@ h1, h2, h3 {
     background-image: url('../assets/images/computing-project.jpg');
 }
 
-/* Pigeon eye blink */
+/* Pigeon eye blink - real membrane extracted from the reference photo */
 .hero-section {
     position: relative;
     overflow: hidden;
@@ -334,8 +334,8 @@ h1, h2, h3 {
 .pigeon-eye {
     position: absolute;
     left: 53.75%;
-    top: 29.55%;
-    width: clamp(82px, 7.15vw, 132px);
+    top: 29.9%;
+    width: clamp(86px, 7.45vw, 136px);
     aspect-ratio: 1 / 1.03;
     transform: translate(-50%, -50%);
     border-radius: 50%;
@@ -344,63 +344,41 @@ h1, h2, h3 {
     z-index: 1;
 }
 
-.pigeon-eyelid {
+.pigeon-membrane {
     position: absolute;
-    left: -8%;
-    width: 116%;
-    height: 56%;
-    will-change: transform;
-    background:
-        radial-gradient(ellipse at 50% 85%, rgba(56, 56, 67, 0.96) 0 46%, rgba(67, 68, 80, 0.98) 64%, rgba(49, 49, 60, 1) 100%);
+    width: 118%;
+    height: 118%;
+    left: -9%;
+    top: -9%;
+    background: url("data:image/png;base64,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") center / contain no-repeat;
+    transform-origin: 78% 20%;
+    transform: translate(82%, -62%) rotate(-18deg) scale(1.1);
+    opacity: 0;
+    filter: brightness(0.88) saturate(0.68) contrast(1.04);
     transition:
-        transform 78ms cubic-bezier(.3, .05, .2, 1),
-        filter 78ms ease;
+        transform 90ms cubic-bezier(.28,.05,.2,1),
+        opacity 22ms linear;
+    will-change: transform, opacity;
 }
 
-.pigeon-eyelid-top {
-    top: -4%;
-    border-radius: 52% 52% 46% 46% / 80% 80% 24% 24%;
-    transform: translateY(-104%);
-    box-shadow:
-        inset 0 -4px 7px rgba(20, 18, 23, 0.35),
-        0 2px 3px rgba(21, 18, 22, 0.22);
+.pigeon-eye.is-blinking .pigeon-membrane {
+    transform: translate(2%, 1%) rotate(-7deg) scale(1.1);
+    opacity: 0.98;
 }
 
-.pigeon-eyelid-bottom {
-    bottom: -5%;
-    height: 48%;
-    border-radius: 44% 44% 54% 54% / 20% 20% 80% 80%;
-    transform: translateY(106%);
-    background:
-        radial-gradient(ellipse at 50% 10%, rgba(46, 45, 55, 0.98) 0 44%, rgba(58, 58, 70, 0.98) 68%, rgba(43, 43, 52, 1) 100%);
-    box-shadow: inset 0 4px 6px rgba(17, 15, 20, 0.34);
-}
-
-.pigeon-eye.is-blinking .pigeon-eyelid-top {
-    transform: translateY(0);
-}
-
-.pigeon-eye.is-blinking .pigeon-eyelid-bottom {
-    transform: translateY(0);
-}
-
-.pigeon-eye.is-opening .pigeon-eyelid {
-    transition-duration: 115ms;
+.pigeon-eye.is-opening .pigeon-membrane {
+    transition-duration: 125ms, 45ms;
 }
 
 @media (max-width: 900px) {
     .pigeon-eye {
         left: 53.75%;
-        top: 29.55%;
-        width: clamp(68px, 8vw, 92px);
+        top: 29.9%;
+        width: clamp(72px, 8.3vw, 98px);
     }
 }
 
 @media (max-width: 600px) {
-    /*
-       The hero image is cropped much more aggressively on narrow screens,
-       so hiding the overlay prevents a misplaced blink.
-    */
     .pigeon-eye {
         display: none;
     }
