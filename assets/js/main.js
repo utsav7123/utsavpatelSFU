@@ -23,4 +23,61 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Give the pigeon a natural, irregular blink.
+    const pigeonEye = document.querySelector('.pigeon-eye');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let blinkTimer;
+
+    function randomBlinkDelay() {
+        return 2600 + Math.random() * 4800;
+    }
+
+    function blinkOnce() {
+        if (!pigeonEye || reduceMotion.matches || document.hidden) return;
+
+        pigeonEye.classList.remove('is-opening');
+        pigeonEye.classList.add('is-blinking');
+
+        window.setTimeout(() => {
+            pigeonEye.classList.add('is-opening');
+            pigeonEye.classList.remove('is-blinking');
+
+            window.setTimeout(() => {
+                pigeonEye.classList.remove('is-opening');
+            }, 130);
+        }, 105);
+    }
+
+    function scheduleBlink() {
+        window.clearTimeout(blinkTimer);
+
+        if (!pigeonEye || reduceMotion.matches || document.hidden) return;
+
+        blinkTimer = window.setTimeout(() => {
+            blinkOnce();
+
+            // A small chance of a quick second blink keeps it from feeling mechanical.
+            if (Math.random() < 0.16) {
+                window.setTimeout(blinkOnce, 240 + Math.random() * 160);
+            }
+
+            scheduleBlink();
+        }, randomBlinkDelay());
+    }
+
+    if (pigeonEye && !reduceMotion.matches) {
+        scheduleBlink();
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                window.clearTimeout(blinkTimer);
+            } else {
+                scheduleBlink();
+            }
+        });
+
+        reduceMotion.addEventListener?.('change', scheduleBlink);
+    }
+
 });
