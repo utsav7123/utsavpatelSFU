@@ -319,3 +319,95 @@ h1, h2, h3 {
 .computing-project {
     background-image: url('../assets/images/computing-project.jpg');
 }
+
+/* Pigeon eye blink */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.pigeon-eye {
+    position: absolute;
+    left: 52.35%;
+    top: 28.05%;
+    width: clamp(82px, 7.15vw, 132px);
+    aspect-ratio: 1 / 1.03;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.pigeon-eyelid {
+    position: absolute;
+    left: -8%;
+    width: 116%;
+    height: 56%;
+    will-change: transform;
+    background:
+        radial-gradient(ellipse at 50% 85%, rgba(56, 56, 67, 0.96) 0 46%, rgba(67, 68, 80, 0.98) 64%, rgba(49, 49, 60, 1) 100%);
+    transition:
+        transform 78ms cubic-bezier(.3, .05, .2, 1),
+        filter 78ms ease;
+}
+
+.pigeon-eyelid-top {
+    top: -4%;
+    border-radius: 52% 52% 46% 46% / 80% 80% 24% 24%;
+    transform: translateY(-104%);
+    box-shadow:
+        inset 0 -4px 7px rgba(20, 18, 23, 0.35),
+        0 2px 3px rgba(21, 18, 22, 0.22);
+}
+
+.pigeon-eyelid-bottom {
+    bottom: -5%;
+    height: 48%;
+    border-radius: 44% 44% 54% 54% / 20% 20% 80% 80%;
+    transform: translateY(106%);
+    background:
+        radial-gradient(ellipse at 50% 10%, rgba(46, 45, 55, 0.98) 0 44%, rgba(58, 58, 70, 0.98) 68%, rgba(43, 43, 52, 1) 100%);
+    box-shadow: inset 0 4px 6px rgba(17, 15, 20, 0.34);
+}
+
+.pigeon-eye.is-blinking .pigeon-eyelid-top {
+    transform: translateY(0);
+}
+
+.pigeon-eye.is-blinking .pigeon-eyelid-bottom {
+    transform: translateY(0);
+}
+
+.pigeon-eye.is-opening .pigeon-eyelid {
+    transition-duration: 115ms;
+}
+
+@media (max-width: 900px) {
+    .pigeon-eye {
+        left: 52.3%;
+        top: 28.1%;
+        width: clamp(68px, 8vw, 92px);
+    }
+}
+
+@media (max-width: 600px) {
+    /*
+       The hero image is cropped much more aggressively on narrow screens,
+       so hiding the overlay prevents a misplaced blink.
+    */
+    .pigeon-eye {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pigeon-eye {
+        display: none;
+    }
+}
