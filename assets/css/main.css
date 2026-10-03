@@ -333,8 +333,8 @@ h1, h2, h3 {
 
 .pigeon-eye {
     position: absolute;
-    left: 52.35%;
-    top: 28.05%;
+    left: 53.75%;
+    top: 29.55%;
     width: clamp(82px, 7.15vw, 132px);
     aspect-ratio: 1 / 1.03;
     transform: translate(-50%, -50%);
@@ -390,8 +390,8 @@ h1, h2, h3 {
 
 @media (max-width: 900px) {
     .pigeon-eye {
-        left: 52.3%;
-        top: 28.1%;
+        left: 53.75%;
+        top: 29.55%;
         width: clamp(68px, 8vw, 92px);
     }
 }
