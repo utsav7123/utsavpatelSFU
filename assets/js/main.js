@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             window.setTimeout(() => {
                 pigeonEye.classList.remove('is-opening');
             }, 130);
-        }, 105);
+        }, 145);
     }
 
     function scheduleBlink() {
@@ -67,6 +67,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (pigeonEye && !reduceMotion.matches) {
+        const firstBlinkTimer = window.setTimeout(() => {
+            blinkOnce();
+        }, 900);
+
         scheduleBlink();
 
         document.addEventListener('visibilitychange', () => {
